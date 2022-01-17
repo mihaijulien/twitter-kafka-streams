@@ -7,6 +7,9 @@
     <groupId>io.github.mihaijulien</groupId>
     <artifactId>twitter-microservices</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>twitter-to-kafka-service</module>
+    </modules>
     <packaging>pom</packaging>
 
     <parent>
@@ -20,6 +23,8 @@
         <java.version>11</java.version>
         <spring-boot.version>2.6.2</spring-boot.version>
         <maven-compiler-plugin>3.9.0</maven-compiler-plugin>
+        <twitter4j.version>4.0.7</twitter4j.version>
+        <lombok.version>1.18.22</lombok.version>
     </properties>
 
     <dependencyManagement>
@@ -34,6 +39,17 @@
                 <artifactId>spring-boot-starter-test</artifactId>
                 <version>${spring-boot.version}</version>
                 <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.twitter4j</groupId>
+                <artifactId>twitter4j-stream</artifactId>
+                <version>${twitter4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.22</version>
+                <scope>provided</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
