@@ -10,6 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>twitter-to-kafka-service</artifactId>
+    <name>Twitter-to-Kafka Service</name>
 
     <dependencies>
         <dependency>
@@ -28,7 +29,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <scope>provided</scope>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 
