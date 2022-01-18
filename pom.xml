@@ -9,6 +9,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>twitter-to-kafka-service</module>
+        <module>app-config-data</module>
     </modules>
     <packaging>pom</packaging>
 
