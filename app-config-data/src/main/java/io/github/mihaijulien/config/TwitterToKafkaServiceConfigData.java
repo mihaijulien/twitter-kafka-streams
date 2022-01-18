@@ -1,4 +1,4 @@
-package io.github.mihaijulien.twitter.kafka.service.config;
+package io.github.mihaijulien.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

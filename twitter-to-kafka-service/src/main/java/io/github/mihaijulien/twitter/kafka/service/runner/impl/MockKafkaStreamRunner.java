@@ -1,11 +1,13 @@
 package io.github.mihaijulien.twitter.kafka.service.runner.impl;
 
-import io.github.mihaijulien.twitter.kafka.service.config.TwitterToKafkaServiceConfigData;
+import io.github.mihaijulien.config.TwitterToKafkaServiceConfigData;
 import io.github.mihaijulien.twitter.kafka.service.exception.TwitterToKafkaServiceException;
 import io.github.mihaijulien.twitter.kafka.service.listener.TwitterKafkaStatusListener;
 import io.github.mihaijulien.twitter.kafka.service.runner.StreamRunner;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.stereotype.Component;
 import twitter4j.Status;
 import twitter4j.TwitterException;
 import twitter4j.TwitterObjectFactory;
@@ -13,12 +15,15 @@ import twitter4j.TwitterObjectFactory;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
+import java.util.Locale;
 import java.util.Random;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadLocalRandom;
 
 import static java.lang.Thread.sleep;
 
+@Component
+@ConditionalOnProperty(name = "twitter-to-kafka-service.enable-mock-tweets", havingValue = "true")
 public class MockKafkaStreamRunner implements StreamRunner {
 
     private static final Logger LOG = LoggerFactory.getLogger(MockKafkaStreamRunner.class);
@@ -79,7 +84,7 @@ public class MockKafkaStreamRunner implements StreamRunner {
 
     private String getFormattedTweet(String[] keywords, int minTweetLength, int maxTweetLength){
         String[] params = new String[] {
-                ZonedDateTime.now().format(DateTimeFormatter.ofPattern(TWITTER_STATUS_DATE_FORMAT)),
+                ZonedDateTime.now().format(DateTimeFormatter.ofPattern(TWITTER_STATUS_DATE_FORMAT, Locale.ENGLISH)),
                 String.valueOf(ThreadLocalRandom.current().nextLong(Long.MAX_VALUE)),
                 getRandomTweetContent(keywords, minTweetLength, maxTweetLength),
                 String.valueOf(ThreadLocalRandom.current().nextLong(Long.MAX_VALUE))
