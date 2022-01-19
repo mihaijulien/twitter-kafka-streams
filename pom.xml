@@ -34,6 +34,7 @@
         <avro.version>1.11.0</avro.version>
         <spring-kafka.version>2.8.2</spring-kafka.version>
         <spring-retry.version>1.3.1</spring-retry.version>
+        <spring-webflux.version>2.4.3</spring-webflux.version>
     </properties>
 
     <dependencyManagement>
@@ -85,6 +86,11 @@
                 <groupId>org.springframework.retry</groupId>
                 <artifactId>spring-retry</artifactId>
                 <version>${spring-retry.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-webflux</artifactId>
+                <version>${spring-webflux.version}</version>
             </dependency>
             <!--EXTERNAL-->
             <dependency>
