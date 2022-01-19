@@ -1,4 +1,4 @@
-package io.github.mihaijulien.config;
+package io.github.mihaijulien.common.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

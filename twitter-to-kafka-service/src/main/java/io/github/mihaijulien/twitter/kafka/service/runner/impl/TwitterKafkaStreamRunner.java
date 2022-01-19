@@ -1,6 +1,6 @@
 package io.github.mihaijulien.twitter.kafka.service.runner.impl;
 
-import io.github.mihaijulien.config.TwitterToKafkaServiceConfigData;
+import io.github.mihaijulien.common.config.TwitterToKafkaServiceConfigData;
 import io.github.mihaijulien.twitter.kafka.service.listener.TwitterKafkaStatusListener;
 import io.github.mihaijulien.twitter.kafka.service.runner.StreamRunner;
 import org.slf4j.Logger;
