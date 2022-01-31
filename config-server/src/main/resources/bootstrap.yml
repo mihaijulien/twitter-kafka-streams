@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: configserver
+  cloud:
+    config:
+      git:
+        uri: https://github.com/mihaijulien/twitter-kafka-streams/tree/master/config-server-repository
+        clone-on-start: true
+    fail-fast: true
