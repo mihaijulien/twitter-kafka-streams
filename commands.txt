@@ -1,0 +1,10 @@
+kafkacat
+# Topic metadata
+docker run -it --network=host confluentinc/cp-kafkacat kafkacat -L -b localhost:19092
+# check messages in topic
+docker run -it --network=host confluentinc/cp-kafkacat kafkacat -C -b localhost:19092 -t twitter-topic
+
+### docker
+docker-compose up -d
+# run kafka cluster only
+docker-compose -f common.yml -f kafka_cluster.yml -f services.yml up -d
