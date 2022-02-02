@@ -5,5 +5,11 @@ spring:
     config:
       git:
         uri: https://github.com/mihaijulien/twitter-kafka-streams/tree/master/config-server-repository
+        username: mihaijulien
+        password: pass
         clone-on-start: true
     fail-fast: true
+  sercurity:
+    user:
+      name: spring_cloud_user
+      password: springCloud_Pwd!
