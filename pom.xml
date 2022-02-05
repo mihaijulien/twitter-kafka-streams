@@ -40,6 +40,7 @@
         <spring-aop.version>2.6.3</spring-aop.version>
         <spring-cloud.version>2.2.8.RELEASE</spring-cloud.version>
         <spring-cloud-dependencies.version>Hoxton.SR12</spring-cloud-dependencies.version>
+        <jasypt-spring-boot-starter.version>3.0.4</jasypt-spring-boot-starter.version>
     </properties>
 
     <repositories>
@@ -124,6 +125,11 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-security</artifactId>
                 <version>${spring-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.ulisesbocchio</groupId>
+                <artifactId>jasypt-spring-boot-starter</artifactId>
+                <version>${jasypt-spring-boot-starter.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
